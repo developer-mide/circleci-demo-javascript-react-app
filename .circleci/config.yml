@@ -18,7 +18,7 @@ jobs:
             path: test_results
        - store_artifacts:
             path: test_results
-   deploy_app: 
+  deploy_app: 
          executor: heroku/default
          steps: 
            - heroku/install
