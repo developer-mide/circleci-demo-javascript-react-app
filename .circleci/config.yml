@@ -22,10 +22,13 @@ jobs:
             path: test_results
   deploy_app: 
          executor: heroku/default
-         steps: 
-           - heroku/install
+         steps:
            - heroku/check-authentication
            - heroku/deploy-via-git:
+           - run:
+               name: Create git repo
+               command: git init            
+           - heroku/install
                 api-key: HEROKU_API_KEY
                 app-name: my-first-ci-deployment
                 force: true
