@@ -16,6 +16,9 @@ jobs:
        - run: 
             name: Test Javascript project
             command: npm run test
+       - run: 
+            name: Build nodejs app
+            command: npm run build
        - store_test_results:
             path: test_results
        - store_artifacts:
