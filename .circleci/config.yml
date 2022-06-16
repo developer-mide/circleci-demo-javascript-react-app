@@ -33,7 +33,6 @@ jobs:
                 app-name: my-first-ci-deployment
                 force: true
                 branch: main
-                tag: main
       
             
 workflows: 
