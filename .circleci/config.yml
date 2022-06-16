@@ -6,6 +6,8 @@ jobs:
   build_test: 
      docker: 
         - image: cimg/node:18.4.0
+     environment: 
+        HEROKU_API_KEY: 364ff53c-c7d7-4a83-bc8e-1cd10c305243
      steps: 
        - checkout
        - run: 
@@ -24,7 +26,7 @@ jobs:
            - heroku/install
            - heroku/check-authentication
            - heroku/deploy-via-git:
-                api-key: 364ff53c-c7d7-4a83-bc8e-1cd10c305243
+                api-key: HEROKU_API_KEY
                 app-name: my-first-ci-deployment
                 force: true
                 branch: main
