@@ -1,7 +1,9 @@
 version: 2.1
+orbs: 
+  heroku: circleci/heroku@1.2.6
 
 jobs: 
-  build_test_deploy: 
+  build_test: 
      docker: 
         - image: cimg/node:18.4.0
      steps: 
@@ -16,9 +18,18 @@ jobs:
             path: test_results
        - store_artifacts:
             path: test_results
+   deploy_app: 
+         executor: heroku/default
+         steps: 
+           - heroku/install
+           - heroku/check-authentication
+           - heroku/deploy-via-git
+      
             
 workflows: 
    run_jobs:
       jobs:
-      - build_test_deploy
-           
+      - build_test
+      - deploy_app:
+          requires: 
+             - build_test
