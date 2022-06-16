@@ -51,3 +51,6 @@ workflows:
       - deploy_app:
           requires: 
              - build_test
+          filters:
+             branches:
+                only: master
