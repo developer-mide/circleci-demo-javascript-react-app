@@ -23,9 +23,15 @@ jobs:
             path: test_results
        - store_artifacts:
             path: test_results
+       - persist_to_workspace:
+            root: ~/project
+            paths:
+            - .
   deploy_app: 
          executor: heroku/default
          steps:
+           - attach_workspace:
+             at: ~/project
            - heroku/install
            - heroku/check-authentication
            - run:
