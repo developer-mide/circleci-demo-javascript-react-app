@@ -24,7 +24,7 @@ jobs:
            - heroku/install
            - heroku/check-authentication
            - heroku/deploy-via-git:
-                api-key: $HEROKU_API_KEY
+                api-key: 364ff53c-c7d7-4a83-bc8e-1cd10c305243
                 app-name: my-first-ci-deployment
                 force: true
                 branch: main
