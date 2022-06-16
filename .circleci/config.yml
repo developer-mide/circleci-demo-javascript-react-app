@@ -8,7 +8,7 @@ jobs:
        - checkout
        - run: 
            name: Run build
-           command: npm install
+           command: npm install --force
        - run: 
             name: Test Javascript project
             command: npm run test
