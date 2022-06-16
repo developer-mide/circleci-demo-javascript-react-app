@@ -32,7 +32,7 @@ jobs:
                 api-key: HEROKU_API_KEY
                 app-name: my-first-ci-deployment
                 force: true
-                branch: Circle_CI.Public
+                branch: CircleCI-Public
       
             
 workflows: 
